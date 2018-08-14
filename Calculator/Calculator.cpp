@@ -16,22 +16,40 @@ void calculator(string str)
     int total = 0;
     for(int i = 0; i < str.length(); i++)
     {
-        if(str.at(i) != '+' || str.at(i) != '-')
+        if(str.at(i) != '+' && str.at(i) != '-')
         {
             a = str.at(i)-48;
+            
+            total = total + a;
             
         }
         
         if(str.at(i) == '+')
         {
-            total = a + i++;
+            i++;
+            //cout << str.at(i)<< " HERE" << endl;
+            a = str.at(i)-48;
+            total = total + a;
+            
+            
+        }
+        
+        if(str.at(i) == '-')
+        {
+            //cout << str.at(i)<< " HERE" << endl;
+            i++;
+            a = str.at(i)-48;
+            total = total - a;
+            
+            
         }
         
     }
     
     
-    cout << total;
+    cout << total << endl;
 };
+
 
 int main() {
     string expression = "6+3-1";
